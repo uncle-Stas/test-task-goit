@@ -1,5 +1,6 @@
-import { UserCard } from 'components';
 import React from 'react';
+
+import { UserCard } from 'components';
 
 import user from 'db/users.json';
 

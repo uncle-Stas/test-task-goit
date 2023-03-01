@@ -5,9 +5,14 @@ import logo from 'images/logo.png';
 import line from 'images/line.png';
 import ellipse from 'images/ellipse.png';
 
+interface IProp {
+  followStatus: boolean;
+}
+
 export const Card = styled.div`
   width: 380px;
   height: 460px;
+  margin: 40px auto 0 auto;
   padding-top: 184px;
   text-align: center;
   background-image: url(${ellipse}), url(${line}), url(${logo}), url(${bgImage}),
@@ -37,11 +42,10 @@ export const Text = styled.p`
   color: #ebd8ff;
 `;
 
-export const BtnFollow = styled.button`
+export const BtnFollow = styled.button<IProp>`
   width: 196px;
   margin-top: 10px;
   padding: 14px 0;
-  background: #ebd8ff;
   box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   border: none;
@@ -50,4 +54,7 @@ export const BtnFollow = styled.button`
   line-height: 22px;
   text-transform: uppercase;
   color: #373737;
+  cursor: pointer;
+
+  background: ${props => (props.followStatus ? '#5CD3A8' : '#EBD8FF')};
 `;
