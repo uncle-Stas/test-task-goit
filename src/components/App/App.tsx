@@ -1,5 +1,12 @@
+import { UserCard } from 'components';
 import React from 'react';
 
+import user from 'db/users.json';
+
 export const App: React.FC = () => {
-  return <div>privet</div>;
+  return (
+    <main>
+      <UserCard user={user} />
+    </main>
+  );
 };
