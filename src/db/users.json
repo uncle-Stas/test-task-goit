@@ -3,5 +3,6 @@
   "user": "Elon Reeve Musk",
   "tweets": 777,
   "followers": 100500,
-  "avatar": "https://cdn-icons-png.flaticon.com/512/2922/2922506.png"
+  "avatar": "https://cdn-icons-png.flaticon.com/512/2922/2922506.png",
+  "isFollowing": false
 }

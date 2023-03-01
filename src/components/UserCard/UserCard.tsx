@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Avatar, BtnFollow, Card, Text } from './UserCard.styled';
-import { formatNumber } from 'utils';
+import { formatNumber, getDataLocalStorage } from 'utils';
 import IUser from 'types/user';
 
 interface IProp {
@@ -8,25 +8,38 @@ interface IProp {
 }
 
 export const UserCard: React.FC<IProp> = ({ user }) => {
-  const [isFollowing, setIsFollowing] = useState(!!localStorage.getItem('isFollowing'));
+  const userLocalState = getDataLocalStorage('user');
+  const [userState, setUserState] = useState<IUser>(userLocalState ?? user);
+  console.log('userState: ', userState.followers);
+
+  useEffect(() => {
+    localStorage.setItem('user', JSON.stringify(userState));
+  }, [userState]);
 
   const btnIvent = (): void => {
-    if (!isFollowing) {
-      setIsFollowing(true);
-      localStorage.setItem('isFollowing', 'true');
+    if (!userState.isFollowing) {
+      setUserState(prevState => ({
+        ...prevState,
+        followers: prevState.followers + 1,
+        isFollowing: true,
+      }));
       return;
     }
-    setIsFollowing(false);
-    localStorage.setItem('isFollowing', '');
+
+    setUserState(prevState => ({
+      ...prevState,
+      followers: prevState.followers - 1,
+      isFollowing: false,
+    }));
   };
 
   return (
     <Card>
-      <Avatar src={user.avatar} alt={user.user} />
-      <Text>{formatNumber(user.tweets)} tweets</Text>
-      <Text>{formatNumber(user.followers)} followers</Text>
-      <BtnFollow type="button" onClick={btnIvent} followStatus={isFollowing}>
-        {isFollowing ? 'following' : 'follow'}
+      <Avatar src={userState.avatar} alt={userState.user} />
+      <Text>{formatNumber(userState.tweets)} tweets</Text>
+      <Text>{formatNumber(userState.followers)} followers</Text>
+      <BtnFollow type="button" onClick={btnIvent} followStatus={userState.isFollowing}>
+        {userState.isFollowing ? 'following' : 'follow'}
       </BtnFollow>
     </Card>
   );
