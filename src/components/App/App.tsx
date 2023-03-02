@@ -1,13 +1,17 @@
 import React from 'react';
+import users from 'db/users.json';
 
-import { UserCard } from 'components';
-
-import user from 'db/users.json';
+import { UsersList } from 'components';
+import { Container, Section } from './App.styled';
 
 export const App: React.FC = () => {
   return (
     <main>
-      <UserCard user={user} />
+      <Section>
+        <Container>
+          <UsersList users={users} />
+        </Container>
+      </Section>
     </main>
   );
 };
