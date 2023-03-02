@@ -1,8 +1,58 @@
-{
-  "id": 1,
-  "user": "Elon Reeve Musk",
-  "tweets": 777,
-  "followers": 100500,
-  "avatar": "https://cdn-icons-png.flaticon.com/512/2922/2922506.png",
-  "isFollowing": false
-}
+[
+  {
+    "id": 1,
+    "user": "Elon Reeve Musk",
+    "tweets": 777,
+    "followers": 100500,
+    "avatar": "https://cdn-icons-png.flaticon.com/512/2922/2922506.png",
+    "isFollowing": false
+  },
+  {
+    "id": 2,
+    "user": "Bill Gates",
+    "tweets": 1403,
+    "followers": 10493800,
+    "avatar": "https://picsum.photos/200?random=1",
+    "isFollowing": false
+  },
+  {
+    "id": 3,
+    "user": "Bernard Arnault",
+    "tweets": 11234,
+    "followers": 34356780,
+    "avatar": "https://picsum.photos/200?random=2",
+    "isFollowing": false
+  },
+  {
+    "id": 4,
+    "user": "Jeff Bezos",
+    "tweets": 153677,
+    "followers": 12243500,
+    "avatar": "https://picsum.photos/200?random=3",
+    "isFollowing": false
+  },
+  {
+    "id": 5,
+    "user": "Larry Ellison",
+    "tweets": 57667,
+    "followers": 124400,
+    "avatar": "https://picsum.photos/200?random=4",
+    "isFollowing": false
+  },
+  {
+    "id": 6,
+    "user": "Warren Buffet",
+    "tweets": 457,
+    "followers": 1230000,
+    "avatar": "https://picsum.photos/200?random=5",
+    "isFollowing": false
+  },
+  {
+    "id": 7,
+    "user": "Steve Ballmer",
+    "tweets": 34,
+    "followers": 1230,
+    "avatar": "https://picsum.photos/200?random=6",
+    "isFollowing": false
+  }
+]

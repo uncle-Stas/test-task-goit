@@ -1,6 +1,6 @@
 import IUser from 'types/user';
 
-export const getDataLocalStorage = (key: string): undefined | IUser => {
+export const getDataLocalStorage = (key: string): undefined | IUser[] => {
   try {
     const serializedState = localStorage.getItem(key);
     return serializedState === null ? undefined : JSON.parse(serializedState);

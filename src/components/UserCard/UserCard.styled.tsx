@@ -12,7 +12,6 @@ interface IProp {
 export const Card = styled.div`
   width: 380px;
   height: 460px;
-  margin: 40px auto 0 auto;
   padding-top: 184px;
   text-align: center;
   background-image: url(${ellipse}), url(${line}), url(${logo}), url(${bgImage}),
