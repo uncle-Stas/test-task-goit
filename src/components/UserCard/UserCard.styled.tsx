@@ -9,7 +9,7 @@ interface IProp {
   followStatus: boolean;
 }
 
-export const Card = styled.div`
+export const Card = styled.li`
   width: 380px;
   height: 460px;
   padding-top: 184px;
@@ -54,6 +54,12 @@ export const BtnFollow = styled.button<IProp>`
   text-transform: uppercase;
   color: #373737;
   cursor: pointer;
+  transition: background-color linear 250ms;
 
-  background: ${props => (props.followStatus ? '#5CD3A8' : '#EBD8FF')};
+  &:hover,
+  &:focus {
+    background-color: ${props => (props.followStatus ? '#40af87' : '#cdb3e9')};
+  }
+
+  background-color: ${props => (props.followStatus ? '#5CD3A8' : '#EBD8FF')};
 `;
